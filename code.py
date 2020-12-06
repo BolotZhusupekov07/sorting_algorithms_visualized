@@ -9,6 +9,15 @@ def bubble_sort(list_):
                 list[i], list[i+1] = list[i+1], list_[i]
                 swapped = True
             yield list_
-            
+           
+def insertion_sort(list_):
+    for i in range(1, len(list_)):
+        insert_number = list_[i]
+        j = i - 1
+        while j>=1 and list_[j] < insert_number:
+            list_[j] = list_[j+1]
+            j-=1
+        list_[j+1]=insert_number
+        yield list_
             
             
