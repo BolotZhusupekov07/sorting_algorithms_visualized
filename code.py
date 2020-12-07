@@ -82,48 +82,51 @@ def merge(list_, left_index, right_index, middle):
 
 if __name__ == "__main__":
 
-    Range = int(input('Write range: '))
-    Algorithm = input('Pick sorting algorithm:''\n'
-                      'B for Bubble sort''\n'
-                      'S for Selection sort''\n'
-                      'M for Merge sort''\n'
-                      'I for Insertion sort''\n')
+    try:
+        Range = int(input('Write range: '))
+        Algorithm = input('Pick sorting algorithm:''\n'
+                          'B for Bubble sort''\n'
+                          'S for Selection sort''\n'
+                          'M for Merge sort''\n'
+                          'I for Insertion sort''\n')
+        A = [x for x in range(Range)]
 
-    A = [x for x in range(Range)]
+        random.shuffle(A)
 
-    random.shuffle(A)
+        if Algorithm == 'B':
+            title = 'Bubble sort'
+            generator = bubble_sort(A)
+        elif Algorithm == 'I':
+            title = 'Insertion sort'
+            generator = insertion_sort(A)
+        elif Algorithm == 'S':
+            title = 'Selection sort'
+            generator = selection_sort(A)
+        elif Algorithm == 'M':
+            title = 'Merge sort'
+            generator = merge_sort(A, 0, len(A) - 1)
 
-    if Algorithm == 'B':
-        title = 'Bubble sort'
-        generator = bubble_sort(A)
-    elif Algorithm == 'I':
-        title = 'Insertion sort'
-        generator = insertion_sort(A)
-    elif Algorithm == 'S':
-        title = 'Selection sort'
-        generator = selection_sort(A)
-    elif Algorithm == 'M':
-        title = 'Merge sort'
-        generator = merge_sort(A, 0, len(A) - 1)
+        fig, ax = plt.subplots()
 
-    fig, ax = plt.subplots()
+        bar_rects = ax.bar(range(len(A)), A, align='edge')
 
-    bar_rects = ax.bar(range(len(A)), A, align='edge')
+        ax.set_xlim(0, Range)
+        ax.set_ylim(0, int(1.05 * Range))
 
-    ax.set_xlim(0, Range)
-    ax.set_ylim(0, int(1.05*Range))
-
-    iterations = [0]
-
-
-    def update_fig(list_, rects, iteration):
-        for rect, val in zip(rects, list_):
-            rect.set_height(val)
-        iteration[0] += 1
+        iterations = [0]
 
 
-    anim = animation.FuncAnimation(fig, func=update_fig,
-                                   fargs=(bar_rects, iterations),
-                                   frames=generator, interval=1,
-                                   repeat=False)
-    plt.show()
+        def update_fig(list_, rects, iteration):
+            for rect, val in zip(rects, list_):
+                rect.set_height(val)
+            iteration[0] += 1
+
+
+        anim = animation.FuncAnimation(fig, func=update_fig,
+                                       fargs=(bar_rects, iterations),
+                                       frames=generator, interval=1,
+                                       repeat=False)
+        plt.show()
+
+    except ValueError:
+        print('Please enter valid input')
