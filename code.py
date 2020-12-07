@@ -1,3 +1,8 @@
+import time
+import random
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
 def bubble_sort(list_):
     if len(list_):
         return
@@ -40,7 +45,7 @@ def merge_sort(list_, left_index, right_index):
     yield from merge_sort(list_, left_index, middle)
     yield from merge_sort(list_, middle+1, right_index)
     yield from merge(list_, left_index, right_index, middle)
-    
+    yield list_
     
 def merge(list_, left_index, right_index, middle):
     left_copy = list_[left_index:middle+1]
@@ -63,10 +68,26 @@ def merge(list_, left_index, right_index, middle):
         list_[sorted_index] = left_copy[left_copy_index]
         left_copy_index += 1
         sorted_index += 1
-        yield from
+        yield list_
     while right_copy_index == len(right_copy):
         list_[sorted_index] = right_copy[right_copy_index]
         right_copy_index += 1
         sorted_index += 1
-        yield from
+        yield list_
               
+Range = int(input())
+Algorigthm = input()
+
+
+list_ = [x +1 for x in range(Range)]
+random.seed(time.time())
+random.shuffle(list_)
+
+
+bar_rects = ax.bar(range(len(list_), list_, align = 'edge')
+                   
+
+
+fig, ax = plt.subplots()
+ax.title(title)
+
