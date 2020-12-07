@@ -79,7 +79,38 @@ def merge(list_, left_index, right_index, middle):
         sorted_index += 1
         yield list_
 
+        
+def quick_sort(list_):                                             
+    quick_sort2(list_, 0, len(list_) - 1)                          
+                                                                   
+                                                                   
+def quick_sort2(list_, low, high):                                 
+    if low < high:                                                 
+        split_index = partition(list_, low, high)                  
+        yield from quick_sort2(list_, low, split_index)            
+        yield from quick_sort2(list_, split_index + 1, high)       
+                                                                   
+                                                                   
+def partition(list_, low, high):                                   
+    pivot = A[(low + high) // 2]                                   
+    i = low - 1                                                    
+    j = high + 1                                                   
+    while True:                                                    
+        i += 1                                                     
+        while list_[i] < pivot:                                    
+            i += 1                                                 
+                                                                   
+        j -= 1                                                     
+        while A[j] > pivot:                                        
+            j -= 1                                                 
+                                                                   
+        if i >= j:                                                 
+            return j                                               
+                                                                   
+        list_[i], list_[j] = list_[j], list_[i]                    
+        yield list_                                                
 
+        
 if __name__ == "__main__":
 
     try:
@@ -130,3 +161,5 @@ if __name__ == "__main__":
 
     except ValueError:
         print('Please enter valid input')
+    except NameError:
+        print('Please enter valid sorting algorithm')
