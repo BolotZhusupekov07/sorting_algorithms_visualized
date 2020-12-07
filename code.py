@@ -32,3 +32,41 @@ def  selection_sort(list_):
             list_[i], list_[lowest_value_index] = list_[lowest_value_index], list_[i]
             yield list_
             
+
+def merge_sort(list_, left_index, right_index):
+    if left_index>=right_index:
+        return 
+    middle = (left_index + right_index)//2
+    yield from merge_sort(list_, left_index, middle)
+    yield from merge_sort(list_, middle+1, right_index)
+    yield from merge(list_, left_index, right_index, middle)
+    
+    
+def merge(list_, left_index, right_index, middle):
+    left_copy = list_[left_index:middle+1]
+    right_copy = list_[middle+1:right_index+1]
+    
+    left_copy_index = 0
+    right_copy_index = 0
+    sorted_index = left_index
+    while left_copy_index < len(left_copy) and right_copy_index < len(right_copy):
+        if left_copy[left_copy_index] <= right_copy[right_index_index]:
+            list_[sorted_index] = left_copy[left_copy_index]
+            left_copy_index += 1
+            
+        else:
+            list_[sorted_index] = right_copy[right_copy_index]
+            right_copy_index += 1
+        sorted_index += 1
+        yield list_
+    while left_copy_index == len(left_copy):
+        list_[sorted_index] = left_copy[left_copy_index]
+        left_copy_index += 1
+        sorted_index += 1
+        yield from
+    while right_copy_index == len(right_copy):
+        list_[sorted_index] = right_copy[right_copy_index]
+        right_copy_index += 1
+        sorted_index += 1
+        yield from
+              
