@@ -77,11 +77,28 @@ def merge(list_, left_index, right_index, middle):
               
 Range = int(input())
 Algorigthm = input()
-
-
 list_ = [x +1 for x in range(Range)]
 random.seed(time.time())
 random.shuffle(list_)
+
+
+if Algorigthm == 'B':
+    title = 'Bubble sort'
+    generator = bubble_sort(list_)
+elif Algorigthm == 'I':
+    title = 'Insertion sort'
+    generator = insertion_sort(list_)
+elif Algorigthm == 'S':
+    title = 'Selection sort'
+    generator = selection_sort(list_)
+elif Algorigthm == 'M':
+    title = 'Merge sort'
+    generator = merge_sort(list_)
+
+
+
+
+
 
 
 bar_rects = ax.bar(range(len(list_), list_, align = 'edge')
@@ -91,3 +108,16 @@ bar_rects = ax.bar(range(len(list_), list_, align = 'edge')
 fig, ax = plt.subplots()
 ax.title(title)
 
+ax.set_xlim(0, Range)
+ax.set_ylim(0, int(1.07 * Range))
+                   
+
+iteration = [0]
+def update_fig(list_, rects, iteration):
+    for rect, val in zip(rects, list_):
+        rect.set_height(val)
+    iteration[0] += 1
+anim = animation(fig, func = update_fig,fargs = (bar_rects, iteration), frames = generator,  interval = 1, repeat = False)
+                   
+                   
+plt.show()
