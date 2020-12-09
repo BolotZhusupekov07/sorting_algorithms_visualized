@@ -8,6 +8,10 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
 
+def shell_sort():
+  pass
+def count_sort():
+  pass
 
 def bubble_sort(list_):
     if len(list_) == 1:
