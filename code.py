@@ -1,6 +1,12 @@
 import random
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import tkinter 
+import numpy
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
+                                               NavigationToolbar2Tk)
+from matplotlib.backend_bases import key_press_handler
+from matplotlib.figure import Figure
 
 
 def bubble_sort(list_):
