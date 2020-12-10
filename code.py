@@ -1,12 +1,6 @@
 import random
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-import tkinter 
-import numpy
-from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
-                                               NavigationToolbar2Tk)
-from matplotlib.backend_bases import key_press_handler
-from matplotlib.figure import Figure
 
 def bubble_sort(list_):
     if len(list_) == 1:
@@ -22,7 +16,7 @@ def bubble_sort(list_):
             yield list_
 
 
-def shell_sort():
+def shell_sort(list_):
     n = len(list_)
     gap = n // 2
     yield list_
