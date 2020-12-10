@@ -8,11 +8,6 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
 
-def shell_sort():
-  pass
-def count_sort():
-  pass
-
 def bubble_sort(list_):
     if len(list_) == 1:
         return
@@ -26,6 +21,23 @@ def bubble_sort(list_):
                 swapped = True
             yield list_
 
+
+def shell_sort():
+    n = len(list_)
+    gap = n // 2
+    yield list_
+    while gap > 0:
+        for i in range(gap, n):
+            temp = list_[i]
+            j = i
+            while j >= gap and list_[j - 1] > temp:
+                list_[j] = list_[j - 1]
+                yield list_
+                j -= 1
+            list_[j] = temp
+            yield list_
+        gap //= 2
+  
 
 def insertion_sort(list_):
     for i in range(1, len(list_)):
@@ -158,7 +170,8 @@ if __name__ == "__main__":
                           'M for Merge sort''\n'
                           'I for Insertion sort''\n'
                           'Q for Quick sort''\n'
-                          'H for Heap Sort''\n')
+                          'H for Heap Sort''\n'
+                          'S for Shell Sort''\n')
         A = [x for x in range(Range)]
         random.shuffle(A)
         
@@ -180,6 +193,9 @@ if __name__ == "__main__":
         elif Algorithm == 'H':
             title = 'Quick sort'
             generator = heap_sort(A)
+        elif Algorithm == 'S':
+            title = 'Shell sort'
+            generator = shell_sort(A)
 
         fig, ax = plt.subplots()
 
