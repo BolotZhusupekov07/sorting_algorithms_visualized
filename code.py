@@ -31,7 +31,23 @@ def shell_sort(list_):
             list_[j] = temp
             yield list_
         gap //= 2
-  
+        
+        
+def odd_even_sort(list_):
+    isSorted = 0
+    while isSorted == 0:
+        isSorted = 1
+        for i in range(0, len(list_) - 1, 2):
+            if list_[i] > list_[i + 1]:
+                list_[i], list_[i + 1] = list_[i + 1], list_[i]
+                isSorted = 0
+                yield list_
+        for i in range(1, len(list_) - 1, 2):
+            if list_[i] > list_[i + 1]:
+                list_[i], list_[i + 1] = list_[i + 1], list_[i]
+                isSorted = 0
+                yield list_
+    yield list_
 
 def insertion_sort(list_):
     for i in range(1, len(list_)):
@@ -164,8 +180,9 @@ if __name__ == "__main__":
                           'M for Merge sort''\n'
                           'I for Insertion sort''\n'
                           'Q for Quick sort''\n'
-                          'H for Heap Sort''\n'
-                          'S for Shell Sort''\n')
+                          'H for Heap sort''\n'
+                          'S for Shell sort''\n'
+                          'O for Odd-Even sort''\n')
         A = [x for x in range(Range)]
         random.shuffle(A)
         
@@ -190,7 +207,9 @@ if __name__ == "__main__":
         elif Algorithm == 'S':
             title = 'Shell sort'
             generator = shell_sort(A)
-
+        elif Algorithm == 'O':
+            title = 'Odd-Even sort'
+            generator = odd_even_sort(A)
         fig, ax = plt.subplots()
 
         bar_ = ax.bar(range(len(A)), A, align='edge', color='pink')
