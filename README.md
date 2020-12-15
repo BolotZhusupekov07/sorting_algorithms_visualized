@@ -20,7 +20,7 @@ pip install random
 ```
 
 
-##Usage
+## Usage
 
 You could use the program to understand how each algotigthm works, or sorts a list!
 
