@@ -1,7 +1,7 @@
 # Description
-The program visualizes the most common eight sorting algorithms using `matplotlib`'s `FuncAnimation`class. 
+The program visualizes the most common eight [sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/) using `matplotlib` module's `FuncAnimation`class. 
 
-Furthermore for User Interface purposes I used `tkinter` module, and another addition module `random`. Here you can find out more about [sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/), and here for more inside to [FuncAnimation](https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.animation.FuncAnimation.html). 
+For UI purposes I used `tkinter` module, and another addition module `random`. 
 
 
 
@@ -54,10 +54,10 @@ The program is fully self-explanatory, one thing may stand out and that is `yiel
 | fargs  | Additional arguments to pass to each call to func. |
 
 
-It makes an animation by repeatedly calling a function _func_. In order to pass data to __func__ and each __frame__, we need to use __generator functions__. Generator functions allow us to declare a function that behaves like an iterator, i.e. as _for loop_. Yield and yield methods are used to create a generator functions.
+It makes an animation by repeatedly calling a function _func_. In order to pass data to _func_ and each _frame_, we need to use __generator functions__. Generator functions allow us to declare a function that behaves like an iterator, i.e. as _for loop_. Yield and yield methods are used to create a generator functions.
 
 
-Here you can learn more about [generators](https://realpython.com/introduction-to-python-generators/).
+
 Here a function in my program, what is a example of generator function:
 
 ```python
