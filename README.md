@@ -35,4 +35,5 @@ This the first stage of process, program keep repeating the sorting until it is 
 ![figure](Images/figure2.png) 
 
 The program has completed the visualization!
+
 ![figure](Images/figure.png)
