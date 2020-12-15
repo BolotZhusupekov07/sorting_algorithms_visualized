@@ -1,5 +1,5 @@
 # Description
-The program visualizes the most common sorting algorithms using `matplotlib`'s `FuncAnimation`class. Furthermore for User Interface purposes I used `tkinter` module, and another addition module `random`.
+The program visualizes the most common eight sorting algorithms using `matplotlib`'s `FuncAnimation`class. What are sorting algorithms,they are used to rearrange a given array or list elements according to a comparison operator on the elements. The comparison operator is used to decide the new order of element in the respective data structure. Furthermore for User Interface purposes I used `tkinter` module, and another addition module `random`. Here you can find out more about [sorting algorithms]{https://www.geeksforgeeks.org/sorting-algorithms/), and here for more inside to [FuncAnimation]{https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.animation.FuncAnimation.html}. 
 
 
 
@@ -24,13 +24,13 @@ pip install random
 
 You could use the program to understand how each algotigthm works, or sorts a list!
 
-After setup; run the code, you must see the following window,
+After setup; __RUN__ the code, you must see the following window,
 
 ![figure](Images/tkinter.1.png) ![figure](Images/tkinter.2.png) 
 
-here you choose the size of array and sorting algorithm. Then hit **Animate**.
+Here you choose the size of array and sorting algorithm. After hit **Animate**.
 
-This is the first stage of process, program keep repeating the sorting until it is fully sorted.
+This is the initial stage of visualization. Program will keep repeating the visualization until it is fully sorted.
 
 ![figure](Images/figure2.png) 
 
@@ -51,7 +51,7 @@ The program is fully self-explanatory, one thing may stand out and that is `yiel
 |frames  | Source of data to pass func and each frame of the animation |
 | fargs  | Additional arguments to pass to each call to func. |
 
-Here sevelar functions in my program, what are examples of generator functions:
+Here a function in my program, what is a example of generator function:
 
 ```python
 def selection_sort(list_):
@@ -66,45 +66,3 @@ def selection_sort(list_):
         yield list_
         
  ```
-```python
-def merge_sort(list_, left_index, right_index):
-    if left_index >= right_index:
-        return
-    middle = (left_index + right_index) // 2
-    yield from merge_sort(list_, left_index, middle)
-    yield from merge_sort(list_, middle + 1, right_index)
-    yield from merge(list_, left_index, right_index, middle)
-    yield list_
-
-
-def merge(list_, left_index, right_index, middle):
-    left_copy = list_[left_index:middle + 1]
-    right_copy = list_[middle + 1:right_index + 1]
-
-    left_copy_index = 0
-    right_copy_index = 0
-    sorted_index = left_index
-    while left_copy_index < len(left_copy) and right_copy_index < len(right_copy):
-        if left_copy[left_copy_index] <= right_copy[right_copy_index]:
-            list_[sorted_index] = left_copy[left_copy_index]
-            left_copy_index += 1
-
-        else:
-            list_[sorted_index] = right_copy[right_copy_index]
-            right_copy_index += 1
-        sorted_index += 1
-        yield list_
-    while left_copy_index < len(left_copy):
-        list_[sorted_index] = left_copy[left_copy_index]
-        left_copy_index += 1
-        sorted_index += 1
-        yield list_
-    while right_copy_index < len(right_copy):
-        list_[sorted_index] = right_copy[right_copy_index]
-        right_copy_index += 1
-        sorted_index += 1
-        yield list_
-```
-
-
-
