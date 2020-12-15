@@ -19,4 +19,4 @@ pip install matplotlib
 pip install random
 ```
 
-![figure](///C:/Users/Bolot/Downloads/figure.png)
+![figure](figure.png)
