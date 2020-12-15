@@ -1,32 +1,22 @@
 # Description
-The program visualizes most common sorting algorithms using `matplotlib`
+The program visualizes the most common sorting algorithms using `matplotlib`'s `FuncAnimation` method. Furthermore for User Interface purposes I used `tkinter` module, and another addition module `random`.
+
+
+
+
 
 ## Setup
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install tkinter and matplotlib.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install tkinter, matplotlib and random.
 
-```bash
+```
 pip install tkinter
 ```
-```bash
+```
 pip install matplotlib
 ```
-
-
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+```
+pip install random
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+![figure](///C:/Users/Bolot/Downloads/figure.png)
