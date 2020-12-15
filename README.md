@@ -41,7 +41,7 @@ This is the final stage and the program has completed the sorting!
 
 ## Code
 
-The program is fully self-explanatory, one thing may stand out and that is `yield` and `yield from`.`FuncAnimation` class takes four parameters and other additional parameters; and makes an animation by repeatedly calling a function _func_. In order to pass data to _func_ and each _frame_, we need to use __generator functions__. Generator functions allow us to declare a function that behaves like an iterator, i.e. it behaves as _for loop_. Therefore to convert simple function(that returns just one value in the end) to generator functions we use `yield` and `yield from`( to be able to access value one value at a time).
+The program is fully self-explanatory, one thing may stand out and that is `yield` and `yield from`.`FuncAnimation` class takes four parameters and other additional parameters; and makes an animation by repeatedly calling a function _func_. In order to pass data to _func_ and each _frame_, we need to use __generator functions__. Generator functions allow us to declare a function that behaves like an iterator, i.e. that behaves as _for loop_. Therefore to convert simple function(that returns just one value in the end) to generator functions we use `yield` and `yield from`( to be able to access value one value at a time).
 
 
 | Parameter | Description |
@@ -50,6 +50,22 @@ The program is fully self-explanatory, one thing may stand out and that is `yiel
 | func   | The function to call at each frame. The first argument will be the next value in frames. |
 |frames  | Source of data to pass func and each frame of the animation |
 | fargs  | Additional arguments to pass to each call to func. |
+
+Here is the example of one of those functions:
+
+```python
+def selection_sort(list_):
+    for i in range(len(list_)):
+        lowest_value_index = i
+        yield list_
+        for j in range(i + 1, len(list_)):
+            if list_[j] < list_[lowest_value_index]:
+                lowest_value_index = j
+                yield list_
+        list_[i], list_[lowest_value_index] = list_[lowest_value_index], list_[i]
+        yield list_
+        
+ ```
 
 
 
