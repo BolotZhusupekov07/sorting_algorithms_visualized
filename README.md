@@ -1,5 +1,7 @@
 # Description
-The program visualizes the most common eight sorting algorithms using `matplotlib`'s `FuncAnimation`class. What are sorting algorithms,they are used to rearrange a given array or list elements according to a comparison operator on the elements. The comparison operator is used to decide the new order of element in the respective data structure. Furthermore for User Interface purposes I used `tkinter` module, and another addition module `random`. Here you can find out more about [sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/), and here for more inside to [FuncAnimation](https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.animation.FuncAnimation.html). 
+The program visualizes the most common eight sorting algorithms using `matplotlib`'s `FuncAnimation`class. 
+
+Furthermore for User Interface purposes I used `tkinter` module, and another addition module `random`. Here you can find out more about [sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/), and here for more inside to [FuncAnimation](https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.animation.FuncAnimation.html). 
 
 
 
@@ -41,8 +43,8 @@ This is the final stage and the program has completed the sorting!
 
 ## Code
 
-The program is fully self-explanatory, one thing may stand out and that is `yield` and `yield from`.`FuncAnimation` class takes four required parameters. It makes an animation by repeatedly calling a function _func_. In order to pass data to __func__ and each __frame__, we need to use __generator functions__. Generator functions allow us to declare a function that behaves like an iterator, i.e. as _for loop_. Here you can learn more about [generators](https://realpython.com/introduction-to-python-generators/).
-
+The program is fully self-explanatory, one thing may stand out and that is `yield` and `yield from`.
+`FuncAnimation` class takes four required parameters. 
 
 | Parameter | Description |
 | ------ | ----------- |
@@ -51,6 +53,11 @@ The program is fully self-explanatory, one thing may stand out and that is `yiel
 |frames  | Source of data to pass func and each frame of the animation |
 | fargs  | Additional arguments to pass to each call to func. |
 
+
+It makes an animation by repeatedly calling a function _func_. In order to pass data to __func__ and each __frame__, we need to use __generator functions__. Generator functions allow us to declare a function that behaves like an iterator, i.e. as _for loop_. Yield and yield methods are used to create a generator functions.
+
+
+Here you can learn more about [generators](https://realpython.com/introduction-to-python-generators/).
 Here a function in my program, what is a example of generator function:
 
 ```python
