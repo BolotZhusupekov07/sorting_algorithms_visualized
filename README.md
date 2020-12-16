@@ -1,5 +1,5 @@
 # Description
-The program visualizes the most common eight [sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/) using `matplotlib` module's `FuncAnimation`class. 
+The program visualizes the most common seven [sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/) using `matplotlib` module's `FuncAnimation`class. 
 
 For UI purposes I used `tkinter` module, and another addition module `random`. 
 
