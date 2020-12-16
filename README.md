@@ -73,3 +73,5 @@ def selection_sort(list_):
         yield list_
         
  ```
+
+[The video](https://youtu.be/YdFKx3HkgHA) in YouTube where I explained in details how the program works 
