@@ -24,7 +24,7 @@ pip install random
 
 ## Usage
 
-You could use the program to understand how each algotigthm works, or sorts a list!
+You could use the program to understand how each algorithm works, or sorts a list!
 
 After setup; __RUN__ the code, you must see the following window,
 
@@ -39,6 +39,9 @@ This is the initial stage of visualization. Program will keep repeating the visu
 This is the final stage and the program has completed the sorting!
 
 ![figure](Images/figure.png)
+
+***
+***
 
 
 ## Code
