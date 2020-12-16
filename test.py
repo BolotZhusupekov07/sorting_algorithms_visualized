@@ -1,4 +1,5 @@
 import unittest
+import random
 
 
 def bubble_sort(arr):
@@ -95,23 +96,78 @@ def odd_even_sort(arr):
     return
 
 
-test_list_1 = [5, 8, 7, 1, 2, 3, 5, 6, 2, 1, 0, 5, 9, 3, 2, 3]
+def heapify(list_, heap_size, index):
+    largest = index
+    left = index * 2 + 1
+    right = index * 2 + 2
+
+    if left < heap_size and list_[largest] < list_[left]:
+        largest = left
+    if right < heap_size and list_[largest] < list_[right]:
+        largest = right
+
+    if largest != index:
+        list_[index], list_[largest] = list_[largest], list_[index]
+        heapify(list_, heap_size, largest)
+
+
+def heap_sort(list_):
+    heap_size = len(list_)
+    for i in range(heap_size, -1, -1):
+        heapify(list_, heap_size, i)
+    for i in range(heap_size - 1, 0, -1):
+        list_[0], list_[i] = list_[i], list_[0]
+        heapify(list_, i, 0)
+
+
+test_list_1 = [x for x in range(10)]
+test_list_2 = [x for x in range(10)]
+test_list_3 = [x for x in range(10)]
+test_list_4 = [x for x in range(10)]
+test_list_5 = [x for x in range(10)]
+test_list_6 = [x for x in range(10)]
+test_list_7 = [x for x in range(10)]
+
+
+random.shuffle(test_list_1)
+random.shuffle(test_list_2)
+random.shuffle(test_list_3)
+random.shuffle(test_list_4)
+random.shuffle(test_list_5)
+random.shuffle(test_list_6)
+random.shuffle(test_list_7)
+
+
 bubble_sort(test_list_1)
-test_list_2 = [78, 9, 52, 1, 5, 9, 8, 9, 86, 2, 3, 4, 5, 7, 2, 3, 6]
 insertion_sort(test_list_2)
-test_list_3 = [9, 4, 5, 6, 3, 1, 4, 8, 7, 89, 12, 36, 10, 15, 7, 0]
 selection_sort(test_list_3)
+merge_sort(test_list_4, 0, len(test_list_4) - 1)
+shell_sort(test_list_5)
+heap_sort(test_list_6)
+odd_even_sort(test_list_7)
 
 
 class Test(unittest.TestCase):
     def test_bubble_sort(self):
-        self.assertListEqual(test_list_1, [0, 1, 1, 2, 2, 2, 3, 3, 3, 5, 5, 5, 6, 7, 8, 9])
+        self.assertListEqual(test_list_1, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
     def test_insertion_sort(self):
-        self.assertListEqual(test_list_2, [1, 2, 2, 3, 3, 4, 5, 5, 6, 7, 8, 9, 9, 9, 52, 78, 86])
+        self.assertListEqual(test_list_2, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
     def test_selection_sort(self):
-        self.assertListEqual(test_list_3, [0, 1, 3, 4, 4, 5, 6, 7, 7, 8, 9, 10, 12, 15, 36, 89])
+        self.assertListEqual(test_list_3, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+    def test_merge_sort(self):
+        self.assertListEqual(test_list_4, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+    def test_shell_sort(self):
+        self.assertListEqual(test_list_5, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+    def test_heap_sort(self):
+        self.assertListEqual(test_list_6, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+    def test_odd_even_sort(self):
+        self.assertListEqual(test_list_7, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 
 if __name__ == '__main__':
