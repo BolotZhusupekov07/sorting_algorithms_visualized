@@ -77,5 +77,5 @@ def selection_sort(list_):
         
  ```
 
-[The video](https://youtu.be/YdFKx3HkgHA) in YouTube where I explained in details how the program works 
+[The video](https://youtu.be/YdFKx3HkgHA) in YouTube where I explained in details how the program works \
 Feedbacks I got from my sisters [Google Drive](https://drive.google.com/drive/folders/1eFH8OkgqHZKmFuIwlBGs77GD6LkzHVoX?usp=sharing)
